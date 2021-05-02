@@ -79,5 +79,6 @@ struct TweetCell: View {
 struct TweetCell_Previews: PreviewProvider {
     static var previews: some View {
         TweetCell()
+            .previewLayout(.sizeThatFits)
     }
 }
