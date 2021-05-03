@@ -23,6 +23,9 @@
 		64C995C1263F3D430042ED5C /* CustomMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995C0263F3D430042ED5C /* CustomMessageInputView.swift */; };
 		64C995C4263F3E5A0042ED5C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995C3263F3E5A0042ED5C /* ChatView.swift */; };
 		64C995C7263F41EE0042ED5C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995C6263F41EE0042ED5C /* ChatBubbleShape.swift */; };
+		64C995CB26401CEA0042ED5C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995CA26401CEA0042ED5C /* Message.swift */; };
+		64C995CE26402DC50042ED5C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995CD26402DC50042ED5C /* MessageView.swift */; };
+		64C995D126402F8E0042ED5C /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995D026402F8E0042ED5C /* NewMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		64C995C0263F3D430042ED5C /* CustomMessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageInputView.swift; sourceTree = "<group>"; };
 		64C995C3263F3E5A0042ED5C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		64C995C6263F41EE0042ED5C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
+		64C995CA26401CEA0042ED5C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		64C995CD26402DC50042ED5C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		64C995D026402F8E0042ED5C /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		64C9959E263EFB9C0042ED5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64C995CA26401CEA0042ED5C /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +140,8 @@
 				64C995C0263F3D430042ED5C /* CustomMessageInputView.swift */,
 				64C995C3263F3E5A0042ED5C /* ChatView.swift */,
 				64C995C6263F41EE0042ED5C /* ChatBubbleShape.swift */,
+				64C995CD26402DC50042ED5C /* MessageView.swift */,
+				64C995D026402F8E0042ED5C /* NewMessageView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -216,10 +225,13 @@
 				64C995A2263EFC170042ED5C /* FeedView.swift in Sources */,
 				64C9958F263EED5C0042ED5C /* twittercloneApp.swift in Sources */,
 				64C995C1263F3D430042ED5C /* CustomMessageInputView.swift in Sources */,
+				64C995D126402F8E0042ED5C /* NewMessageView.swift in Sources */,
+				64C995CE26402DC50042ED5C /* MessageView.swift in Sources */,
 				64C995C7263F41EE0042ED5C /* ChatBubbleShape.swift in Sources */,
 				64C995A5263F015A0042ED5C /* TweetCell.swift in Sources */,
 				64C995AE263F1FD00042ED5C /* UserCell.swift in Sources */,
 				64C995B5263F2D3C0042ED5C /* ConversationCell.swift in Sources */,
+				64C995CB26401CEA0042ED5C /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

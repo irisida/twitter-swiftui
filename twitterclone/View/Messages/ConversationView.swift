@@ -10,9 +10,24 @@ import SwiftUI
 struct ConversationView: View {
     
     @State var isShowingNewMessageView = false
+    @State var willStartChat = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            
+            // A sheet of nav links to chats is presented
+            // on the top layer of the ZStack because the
+            // var isShowingNewMessageView is true.
+            // When one of these links is clicked it will
+            // open the related chat. 
+            NavigationLink(
+                destination: ChatView(),
+                isActive: $willStartChat,
+                label: {
+                    Text("")
+                })
+            
+            
             ScrollView {
                 VStack {
                     ForEach(0 ..< 20) { _ in
@@ -26,6 +41,10 @@ struct ConversationView: View {
                 }
             }
             
+            // the FAB button triggers a sheet to that
+            // presents a list of users we can interact
+            // with and allowing us to select a user
+            // with which to begin a chat.
             Button(action: {
                 self.isShowingNewMessageView.toggle()
             }, label: {
@@ -40,7 +59,8 @@ struct ConversationView: View {
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .padding()
             .sheet(isPresented: $isShowingNewMessageView, content: {
-                SearchView()
+                NewMessageView(willStartChat: $willStartChat,
+                               willShowChat: $isShowingNewMessageView)
             })
         }
     }

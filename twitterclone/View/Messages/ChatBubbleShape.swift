@@ -31,8 +31,9 @@ struct ChatBubbleShape: Shape {
     
 }
 
-struct ChatBubbleShape_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatBubbleShape(isFromCurrentUser: false)
-    }
-}
+// No preview available for this component
+//struct ChatBubbleShape_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatBubbleShape(isFromCurrentUser: false)
+//    }
+//}
