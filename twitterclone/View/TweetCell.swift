@@ -14,7 +14,7 @@ struct TweetCell: View {
                 Image("spiderman")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 48, height: 48)
+                    .frame(width: 56, height: 56)
                     .clipped()
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     .padding(.leading)
@@ -30,45 +30,49 @@ struct TweetCell: View {
                             .foregroundColor(.gray)
                     }
                     
-                    Text("I have a lycra suit. How's that for self confidence?")
+                    Text("This is some random text that is used to depict a typical tweet message. I can span multiple lines. ")
+                    
+                    HStack {
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image(systemName: "bubble.left")
+                                .font(.system(size: 16))
+                                .frame(width: 32, height: 32)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: {}, label: {
+                            Image(systemName: "arrow.2.squarepath")
+                                .font(.system(size: 16))
+                                .frame(width: 32, height: 32)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image(systemName: "heart")
+                                .font(.system(size: 16))
+                                .frame(width: 32, height: 32)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            Image(systemName: "bookmark")
+                                .font(.system(size: 16))
+                                .frame(width: 32, height: 32)
+                        })
+                    }
+                    .padding(.top, 4)
+                    .padding(.trailing, 32)
+                    .foregroundColor(.gray)
                 }
+                
+                
             }
-            .padding(.bottom)
-            .padding(.trailing)
+            .padding(.vertical, 8)
             
-            HStack {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "bubble.left")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Image(systemName: "arrow.2.squarepath")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                
-                Spacer()
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "heart")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-                
-                Spacer()
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "bookmark")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                })
-            }
-            .padding(.horizontal, 32)
-            .foregroundColor(.gray)
+            
             
             Divider()
         }

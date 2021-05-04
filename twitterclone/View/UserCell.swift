@@ -9,27 +9,34 @@ import SwiftUI
 
 struct UserCell: View {
     var body: some View {
-        HStack(spacing: 12) {
-            // image
-            Image("batman")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 56, height: 56)
-                .clipped()
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            
-            // vstack
-            VStack(alignment: .leading, spacing: 4) {
-                Text("UserName")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.black)
-                Text("Full name")
-                    .font(.system(size: 14))
-                    .foregroundColor(.black)
+        VStack {
+            HStack(spacing: 12) {
+                // image
+                Image("batman")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 56, height: 56)
+                    .clipped()
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                
+                // vstack
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("UserName")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.black)
+                    Text("Users Full name")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
+                }
+                
+                Spacer()
             }
+            .padding(.vertical, 8)
             
-            Spacer()
+            Divider()
         }
+        
+        
     }
 }
 

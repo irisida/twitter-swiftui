@@ -54,10 +54,11 @@ struct ConversationView: View {
                     .frame(width: 32, height: 32)
                     .padding()
             })
-            .background(Color(.systemBlue))
+            .background(Color(TWITTER_BLUE))
             .foregroundColor(.white)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .padding()
+            .shadow(color: Color.black.opacity(0.25), radius: 7, x: 1.5, y: 3)
             .sheet(isPresented: $isShowingNewMessageView, content: {
                 NewMessageView(willStartChat: $willStartChat,
                                willShowChat: $isShowingNewMessageView)

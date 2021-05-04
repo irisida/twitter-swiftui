@@ -15,9 +15,10 @@ struct MockMessage: Identifiable {
 }
 
 let MOCK_MESSAGES: [MockMessage] = [
-    .init(id: 0, imageName: "batman", messageText: "Hey Spidey", isCurrentUser: false),
-    .init(id: 1, imageName: "spiderman", messageText: "Hey Batman", isCurrentUser: true),
-    .init(id: 2, imageName: "batman", messageText: "You seen what I've seen?", isCurrentUser: false),
-    .init(id: 3, imageName: "batman", messageText: "You seen WW?", isCurrentUser: false),
-    .init(id: 4, imageName: "spiderman", messageText: "Aye, no bad", isCurrentUser: true)
+    .init(id: 0, imageName: "batman", messageText: "Hi Peter", isCurrentUser: false),
+    .init(id: 1, imageName: "spiderman", messageText: "Hi Bruce", isCurrentUser: true),
+    .init(id: 2, imageName: "batman", messageText: "This is a longer chat message", isCurrentUser: false),
+    .init(id: 3, imageName: "batman", messageText: "And this is a longer response for the purpose of showing multiple lines.", isCurrentUser: false),
+    .init(id: 4, imageName: "spiderman", messageText: "Short message", isCurrentUser: true),
+    .init(id: 5, imageName: "batman", messageText: "OK  ", isCurrentUser: false),
 ]
