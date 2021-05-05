@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64C9958F263EED5C0042ED5C /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9958E263EED5C0042ED5C /* twittercloneApp.swift */; };
-		64C99591263EED5C0042ED5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C99590263EED5C0042ED5C /* ContentView.swift */; };
+		64C99591263EED5C0042ED5C /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C99590263EED5C0042ED5C /* MainContentView.swift */; };
 		64C99593263EED5E0042ED5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C99592263EED5E0042ED5C /* Assets.xcassets */; };
 		64C99596263EED5E0042ED5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C99595263EED5E0042ED5C /* Preview Assets.xcassets */; };
 		64C995A2263EFC170042ED5C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995A1263EFC170042ED5C /* FeedView.swift */; };
@@ -51,7 +51,7 @@
 /* Begin PBXFileReference section */
 		64C9958B263EED5C0042ED5C /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C9958E263EED5C0042ED5C /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
-		64C99590263EED5C0042ED5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64C99590263EED5C0042ED5C /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		64C99592263EED5E0042ED5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64C99595263EED5E0042ED5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64C99597263EED5E0042ED5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 		64C9962D2642E5380042ED5C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				64C99590263EED5C0042ED5C /* ContentView.swift */,
+				64C99590263EED5C0042ED5C /* MainContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -389,7 +389,7 @@
 				64C995FF264196A90042ED5C /* CustomTextField.swift in Sources */,
 				64C995A8263F09180042ED5C /* SearchView.swift in Sources */,
 				64C995B9263F32750042ED5C /* NotificationsView.swift in Sources */,
-				64C99591263EED5C0042ED5C /* ContentView.swift in Sources */,
+				64C99591263EED5C0042ED5C /* MainContentView.swift in Sources */,
 				64C995AB263F0CAD0042ED5C /* CustomSearchBar.swift in Sources */,
 				64C995C4263F3E5A0042ED5C /* ChatView.swift in Sources */,
 				64C995B2263F2D250042ED5C /* ConversationView.swift in Sources */,

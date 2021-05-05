@@ -28,7 +28,6 @@ struct CustomTextField: View {
                     .foregroundColor(.white)
                 
                 TextField("", text: $text)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .accentColor(.white)
             }
         }

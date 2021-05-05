@@ -66,6 +66,7 @@ struct SignupView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                         .foregroundColor(.white)
+                        .autocapitalization(.words)
                     
                     CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person.crop.circle" )
                         .padding()
@@ -73,6 +74,7 @@ struct SignupView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                         .foregroundColor(.white)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope" )
                         .padding()
@@ -80,6 +82,7 @@ struct SignupView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                         .foregroundColor(.white)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     
                     CustomSecureField(text: $password, placeholder: Text("Password"))
                         .padding()
