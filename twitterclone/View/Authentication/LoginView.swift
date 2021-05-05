@@ -57,7 +57,7 @@ struct LoginView: View {
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                         Text("Sign In")
                             .font(.headline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color(TWITTER_BLUE))
                             .frame(width: 400, height: 50)
                             .background(Color.white)
                             .clipShape(Capsule())

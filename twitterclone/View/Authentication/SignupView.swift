@@ -39,6 +39,7 @@ struct SignupView: View {
                                 .frame(width: 110, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .clipped()
                                 .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white,lineWidth: 2))
                                 .padding(.top, 72)
                                 .padding(.bottom, 56)
                         } else {
@@ -92,7 +93,7 @@ struct SignupView: View {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Sign Up")
                         .font(.headline)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(TWITTER_BLUE))
                         .frame(width: 400, height: 50)
                         .background(Color.white)
                         .clipShape(Capsule())
