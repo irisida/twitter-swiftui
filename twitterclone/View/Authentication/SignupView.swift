@@ -19,6 +19,7 @@ struct SignupView: View {
     @State var image: Image?
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @ObservedObject var viewModel = AuthViewModel()
     
     func loadImage() {
         guard let selectedImage = selectedUIImage else { return }
@@ -59,14 +60,14 @@ struct SignupView: View {
                 
                 
                 VStack (spacing: 16){
-                    CustomTextField(text: $email, placeholder: Text("Full Name"), imageName: "person" )
+                    CustomTextField(text: $fullname, placeholder: Text("Full Name"), imageName: "person" )
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
                         .padding(.horizontal)
                         .foregroundColor(.white)
                     
-                    CustomTextField(text: $email, placeholder: Text("Username"), imageName: "person.crop.circle" )
+                    CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person.crop.circle" )
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
@@ -90,7 +91,14 @@ struct SignupView: View {
                 
                 
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    guard let image = selectedUIImage else { return }
+                    viewModel.signUp(fullname: fullname,
+                                     username: username,
+                                     email: email,
+                                     password: password,
+                                     profileImage: image)
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(Color(TWITTER_BLUE))

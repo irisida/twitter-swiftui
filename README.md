@@ -34,3 +34,26 @@ FirebaseInAppMessagingSwift-Beta
 `* additional build time is required due to the volume of new code modes that must be compiled.` 
 
 
+
+## Adding users to your Firebase BE
+
+1) Go to `https://console.firebase.google.com/u/0/project/YOUR-PROJECT-ID/overview` and select the Authentication tab on the left side menu. 
+
+#### Authentication tab
+
+2) Choose the ‘get started’ option from the overview/splash screen
+3) Enable the email/password option as your means of Authentication
+
+#### Firestore tab 
+
+4) select the create database option
+5) Start in “test mode”
+6) Select the server (EU in my case) and proceed. 
+
+#### Storage tab 
+
+7) Go to the rules section 
+8) Update the rues tab to allow writing to data where Auth equals null. ` || request.auth == null` which is required for users not yet authenticated to be able to upload a photo as part of a signup profile setting process. 
+9) choose ‘publish’ 
+
+You should now be in a good position to allow users to signup to your service with an email and password combo. You are also setup to be able to take additional data and a photo as part of that sign up and be able to process them and store them as the rules update above makes that possible. 

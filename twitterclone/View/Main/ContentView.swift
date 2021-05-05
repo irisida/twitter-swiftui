@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  twitterclone
 //
 //  Created by ed on 02/05/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         
         NavigationView {
@@ -38,8 +38,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct mainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
