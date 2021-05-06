@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MainContentView: View {
     
@@ -39,13 +40,22 @@ struct MainContentView: View {
                     }
                     .navigationBarTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarItems(leading: Button(action: {
+                        viewModel.logout()
+                    }, label: {
+                        KFImage(URL(string: viewModel.user?.profileImageUrl ?? ""))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 32, height: 32)
+                            .clipped()
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .overlay(Circle().stroke(Color.black,lineWidth: 1))
+                    }))
                 }
             } else {
                 LoginView()
             }
         }
-        
-        
     }
 }
 

@@ -13,7 +13,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var isAuthenticating = false
     @Published var error: Error?
-    //@Published var user: User?
+    @Published var user: User?
     
     init() {
         userSession = Auth.auth().currentUser
@@ -25,8 +25,8 @@ class AuthViewModel: ObservableObject {
         
         COLLECTION_USERS.document(uid).getDocument { (snapshot, _) in
             guard let data = snapshot?.data() else { return }
-            let user = User(dictionary: data)
-            print("DEBUG -> user is: \(user.username) ")
+            self.user = User(dictionary: data)
+            
         }
     }
     

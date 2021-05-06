@@ -29,7 +29,7 @@ struct CustomTextArea: View {
             
             TextEditor(text: $text)
                 .padding(4)
-                .accentColor(.white)
+                .accentColor(.black)
         }.font(.body)
         
     }
