@@ -9,16 +9,16 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @EnvironmentObject var viewModel: AuthViewModel
+    //@EnvironmentObject var viewModel: AuthViewModel
     @State var isShowingNewTweetView = false
-    
+    @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 VStack {
-                    ForEach(0 ..< 20) { _ in
-                        TweetCell()
+                    ForEach(viewModel.tweets) { tweet in
+                        TweetCell(tweet: tweet)
                     }
                 }
             }

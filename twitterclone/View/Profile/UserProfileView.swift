@@ -28,10 +28,10 @@ struct UserProfileView: View {
                 
                 //UserProfileFilterButtonsView(selectedOption: $selectedFilter)
                 
-                ForEach(0 ..< 9) { tweet in
-                    TweetCell()
-                        .padding(.horizontal, 24)
-                }
+//                ForEach(0 ..< 9) { tweet in
+//                    TweetCell()
+//                        .padding(.horizontal, 24)
+//                }
                 
             }
             
