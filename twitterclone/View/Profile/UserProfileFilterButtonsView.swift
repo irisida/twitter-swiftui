@@ -51,13 +51,14 @@ struct UserProfileFilterButtonsView: View {
                     }, label: {
                         Text(option.title)
                             .frame(width: underlineWidth)
+                            .foregroundColor(Color(TWITTER_BLUE))
                     })
                 }
             }
             
             Rectangle()
                 .frame(width: underlineWidth - 24, height: 3, alignment: .center)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                .foregroundColor(Color(TWITTER_BLUE))
                 .padding(.leading, computedPadding)
                 .animation(.spring())
         }

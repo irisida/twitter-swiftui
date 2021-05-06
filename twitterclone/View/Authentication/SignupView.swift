@@ -19,7 +19,7 @@ struct SignupView: View {
     @State var image: Image?
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @ObservedObject var viewModel = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     
     func loadImage() {
         guard let selectedImage = selectedUIImage else { return }
@@ -55,7 +55,7 @@ struct SignupView: View {
                 })
                 .contentShape(Rectangle())
                 .sheet(isPresented: $willShowImagePicker, onDismiss: loadImage, content: {
-                    ImagePicker(image: $selectedUIImage)
+                    CustomUIImagePicker(image: $selectedUIImage)
                 })
                 
                 

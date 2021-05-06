@@ -76,7 +76,7 @@ struct TweetCell: View {
             
             Divider()
         }
-        .padding(.leading, -8)
+        .padding(.leading, 2)
     }
 }
 

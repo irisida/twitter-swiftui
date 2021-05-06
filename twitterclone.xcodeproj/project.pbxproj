@@ -37,7 +37,7 @@
 		64C995FC2641951D0042ED5C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995FB2641951D0042ED5C /* SignupView.swift */; };
 		64C995FF264196A90042ED5C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C995FE264196A90042ED5C /* CustomTextField.swift */; };
 		64C996022641CB740042ED5C /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C996012641CB740042ED5C /* CustomSecureField.swift */; };
-		64C9960526429FFB0042ED5C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9960426429FFB0042ED5C /* ImagePicker.swift */; };
+		64C9960526429FFB0042ED5C /* CustomUIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9960426429FFB0042ED5C /* CustomUIImagePicker.swift */; };
 		64C996082642B70E0042ED5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C996072642B70E0042ED5C /* GoogleService-Info.plist */; };
 		64C9960C2642BAA50042ED5C /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 64C9960B2642BAA50042ED5C /* FirebaseFunctions */; };
 		64C9960E2642BAA50042ED5C /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 64C9960D2642BAA50042ED5C /* FirebaseInAppMessagingSwift-Beta */; };
@@ -46,6 +46,10 @@
 		64C996142642BAA50042ED5C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 64C996132642BAA50042ED5C /* FirebaseFirestore */; };
 		64C996162642BAA50042ED5C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 64C996152642BAA50042ED5C /* FirebaseStorage */; };
 		64C996192642CE5E0042ED5C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C996182642CE5E0042ED5C /* AuthViewModel.swift */; };
+		64C9963226434BF90042ED5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9963126434BF90042ED5C /* User.swift */; };
+		64C996362643E7C80042ED5C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 64C996352643E7C80042ED5C /* Kingfisher */; };
+		64C996392643E9630042ED5C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C996382643E9630042ED5C /* SearchViewModel.swift */; };
+		64C996432643FE3C0042ED5C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C996422643FE3C0042ED5C /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,9 +85,12 @@
 		64C995FB2641951D0042ED5C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		64C995FE264196A90042ED5C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		64C996012641CB740042ED5C /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
-		64C9960426429FFB0042ED5C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		64C9960426429FFB0042ED5C /* CustomUIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIImagePicker.swift; sourceTree = "<group>"; };
 		64C996072642B70E0042ED5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		64C996182642CE5E0042ED5C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		64C9963126434BF90042ED5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		64C996382643E9630042ED5C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		64C996422643FE3C0042ED5C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +100,7 @@
 			files = (
 				64C996102642BAA50042ED5C /* FirebaseMessaging in Frameworks */,
 				64C9960E2642BAA50042ED5C /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				64C996362643E7C80042ED5C /* Kingfisher in Frameworks */,
 				64C9960C2642BAA50042ED5C /* FirebaseFunctions in Frameworks */,
 				64C996142642BAA50042ED5C /* FirebaseFirestore in Frameworks */,
 				64C996122642BAA50042ED5C /* FirebaseAuth in Frameworks */,
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				64C995CA26401CEA0042ED5C /* Message.swift */,
+				64C9963126434BF90042ED5C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,15 +164,15 @@
 		64C9959F263EFBA90042ED5C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64C995A1263EFC170042ED5C /* FeedView.swift */,
+				64C99590263EED5C0042ED5C /* MainContentView.swift */,
+				64C995B8263F32750042ED5C /* NotificationsView.swift */,
+				64C995A7263F09180042ED5C /* SearchView.swift */,
+				64C995AD263F1FD00042ED5C /* UserCell.swift */,
 				64C995F7264194F10042ED5C /* Authentication */,
-				64C996282642E4540042ED5C /* Feed */,
-				64C9962D2642E5380042ED5C /* Main */,
 				64C995B0263F2D020042ED5C /* Messages */,
-				64C9962A2642E45E0042ED5C /* Notifications */,
 				64C995D3264043700042ED5C /* Profile */,
-				64C996252642E3C00042ED5C /* Search */,
 				64C995EE264184570042ED5C /* Tweets */,
-				64C996232642E3740042ED5C /* User */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				64C996182642CE5E0042ED5C /* AuthViewModel.swift */,
+				64C996382643E9630042ED5C /* SearchViewModel.swift */,
+				64C996422643FE3C0042ED5C /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,9 +215,11 @@
 		64C995E526405D1D0042ED5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				64C995F226418E550042ED5C /* BaseComponents */,
-				64C9961D2642E1E70042ED5C /* StyledComponents */,
-				64C9961E2642E2070042ED5C /* UIKitConversions */,
+				64C995F326418E700042ED5C /* CustomTextArea.swift */,
+				64C995FE264196A90042ED5C /* CustomTextField.swift */,
+				64C996012641CB740042ED5C /* CustomSecureField.swift */,
+				64C9960426429FFB0042ED5C /* CustomUIImagePicker.swift */,
+				64C995AA263F0CAD0042ED5C /* CustomSearchBar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -220,16 +233,6 @@
 			path = Tweets;
 			sourceTree = "<group>";
 		};
-		64C995F226418E550042ED5C /* BaseComponents */ = {
-			isa = PBXGroup;
-			children = (
-				64C995F326418E700042ED5C /* CustomTextArea.swift */,
-				64C995FE264196A90042ED5C /* CustomTextField.swift */,
-				64C996012641CB740042ED5C /* CustomSecureField.swift */,
-			);
-			path = BaseComponents;
-			sourceTree = "<group>";
-		};
 		64C995F7264194F10042ED5C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,21 +242,6 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		64C9961D2642E1E70042ED5C /* StyledComponents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StyledComponents;
-			sourceTree = "<group>";
-		};
-		64C9961E2642E2070042ED5C /* UIKitConversions */ = {
-			isa = PBXGroup;
-			children = (
-				64C9960426429FFB0042ED5C /* ImagePicker.swift */,
-			);
-			path = UIKitConversions;
-			sourceTree = "<group>";
-		};
 		64C996202642E2710042ED5C /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,47 +249,6 @@
 				64C995E626405D2F0042ED5C /* Constants.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		64C996232642E3740042ED5C /* User */ = {
-			isa = PBXGroup;
-			children = (
-				64C995AD263F1FD00042ED5C /* UserCell.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		64C996252642E3C00042ED5C /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				64C995A7263F09180042ED5C /* SearchView.swift */,
-				64C995AA263F0CAD0042ED5C /* CustomSearchBar.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		64C996282642E4540042ED5C /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				64C995A1263EFC170042ED5C /* FeedView.swift */,
-			);
-			path = Feed;
-			sourceTree = "<group>";
-		};
-		64C9962A2642E45E0042ED5C /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				64C995B8263F32750042ED5C /* NotificationsView.swift */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
-		64C9962D2642E5380042ED5C /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				64C99590263EED5C0042ED5C /* MainContentView.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +274,7 @@
 				64C996112642BAA50042ED5C /* FirebaseAuth */,
 				64C996132642BAA50042ED5C /* FirebaseFirestore */,
 				64C996152642BAA50042ED5C /* FirebaseStorage */,
+				64C996352643E7C80042ED5C /* Kingfisher */,
 			);
 			productName = twitterclone;
 			productReference = 64C9958B263EED5C0042ED5C /* twitterclone.app */;
@@ -357,6 +305,7 @@
 			mainGroup = 64C99582263EED5C0042ED5C;
 			packageReferences = (
 				64C9960A2642BAA50042ED5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				64C996342643E7C70042ED5C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 64C9958C263EED5C0042ED5C /* Products */;
 			projectDirPath = "";
@@ -394,21 +343,24 @@
 				64C995C4263F3E5A0042ED5C /* ChatView.swift in Sources */,
 				64C995B2263F2D250042ED5C /* ConversationView.swift in Sources */,
 				64C995F9264195110042ED5C /* LoginView.swift in Sources */,
+				64C9963226434BF90042ED5C /* User.swift in Sources */,
 				64C995A2263EFC170042ED5C /* FeedView.swift in Sources */,
 				64C9958F263EED5C0042ED5C /* twittercloneApp.swift in Sources */,
 				64C995FC2641951D0042ED5C /* SignupView.swift in Sources */,
 				64C995C1263F3D430042ED5C /* CustomMessageInputView.swift in Sources */,
 				64C995F426418E700042ED5C /* CustomTextArea.swift in Sources */,
+				64C996432643FE3C0042ED5C /* ProfileViewModel.swift in Sources */,
 				64C995D126402F8E0042ED5C /* NewMessageView.swift in Sources */,
 				64C995E726405D2F0042ED5C /* Constants.swift in Sources */,
 				64C995D6264044210042ED5C /* UserProfileView.swift in Sources */,
 				64C995CE26402DC50042ED5C /* MessageView.swift in Sources */,
-				64C9960526429FFB0042ED5C /* ImagePicker.swift in Sources */,
+				64C9960526429FFB0042ED5C /* CustomUIImagePicker.swift in Sources */,
 				64C995C7263F41EE0042ED5C /* ChatBubbleShape.swift in Sources */,
 				64C995A5263F015A0042ED5C /* TweetCell.swift in Sources */,
 				64C995DD264045A90042ED5C /* UserProfileHeaderView.swift in Sources */,
 				64C995E0264045D10042ED5C /* UserProfileActionButtonView.swift in Sources */,
 				64C995AE263F1FD00042ED5C /* UserCell.swift in Sources */,
+				64C996392643E9630042ED5C /* SearchViewModel.swift in Sources */,
 				64C995EA2640A53A0042ED5C /* UserProfileFilterButtonsView.swift in Sources */,
 				64C996192642CE5E0042ED5C /* AuthViewModel.swift in Sources */,
 				64C995F0264184860042ED5C /* NewTweetView.swift in Sources */,
@@ -611,6 +563,14 @@
 				minimumVersion = 7.11.1;
 			};
 		};
+		64C996342643E7C70042ED5C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -643,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 64C9960A2642BAA50042ED5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		64C996352643E7C80042ED5C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64C996342643E7C70042ED5C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

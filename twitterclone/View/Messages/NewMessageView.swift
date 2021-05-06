@@ -13,6 +13,8 @@ struct NewMessageView: View {
     @Binding var willStartChat: Bool
     @Binding var willShowChat: Bool
     
+    @ObservedObject var viewModel = SearchViewModel()
+    
     var body: some View {
         ScrollView {
             CustomSearchBar(text: $searchText)
@@ -25,12 +27,12 @@ struct NewMessageView: View {
             // present the list of users that we
             // can chat with
             VStack(alignment: .leading) {
-                ForEach(0 ..< 10) { _ in
+                ForEach(viewModel.users) { user in
                     Button(action: {
                         self.willShowChat.toggle()
                         self.willStartChat.toggle()
                     }, label: {
-                        UserCell()
+                        UserCell(user: user)
                     })
                     
                 }

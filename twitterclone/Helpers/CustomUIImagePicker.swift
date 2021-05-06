@@ -12,7 +12,7 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct CustomUIImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var mode
     
@@ -36,11 +36,11 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-extension ImagePicker {
+extension CustomUIImagePicker {
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
+        let parent: CustomUIImagePicker
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: CustomUIImagePicker) {
             self.parent = parent
         }
         
