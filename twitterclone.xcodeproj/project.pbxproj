@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644E105B26446A5E00AE9D05 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E105A26446A5E00AE9D05 /* UploadTweetViewModel.swift */; };
 		64C9958F263EED5C0042ED5C /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9958E263EED5C0042ED5C /* twittercloneApp.swift */; };
 		64C99591263EED5C0042ED5C /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C99590263EED5C0042ED5C /* MainContentView.swift */; };
 		64C99593263EED5E0042ED5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C99592263EED5E0042ED5C /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		644E105A26446A5E00AE9D05 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		64C9958B263EED5C0042ED5C /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C9958E263EED5C0042ED5C /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
 		64C99590263EED5C0042ED5C /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				64C996182642CE5E0042ED5C /* AuthViewModel.swift */,
 				64C996382643E9630042ED5C /* SearchViewModel.swift */,
 				64C996422643FE3C0042ED5C /* ProfileViewModel.swift */,
+				644E105A26446A5E00AE9D05 /* UploadTweetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				64C995FC2641951D0042ED5C /* SignupView.swift in Sources */,
 				64C995C1263F3D430042ED5C /* CustomMessageInputView.swift in Sources */,
 				64C995F426418E700042ED5C /* CustomTextArea.swift in Sources */,
+				644E105B26446A5E00AE9D05 /* UploadTweetViewModel.swift in Sources */,
 				64C996432643FE3C0042ED5C /* ProfileViewModel.swift in Sources */,
 				64C995D126402F8E0042ED5C /* NewMessageView.swift in Sources */,
 				64C995E726405D2F0042ED5C /* Constants.swift in Sources */,

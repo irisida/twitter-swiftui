@@ -6,22 +6,32 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NewTweetView: View {
     
     @Binding var isPresented: Bool
     @State var captionText: String = ""
+    @ObservedObject var viewModel: UploadTweetViewModel
+        
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+        self.viewModel = UploadTweetViewModel(isPresented: isPresented)
+    }
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack (alignment: .top){
-                    Image("spiderman")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 56, height: 56)
-                        .clipped()
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    if let user = AuthViewModel.shared.user {
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 56, height: 56)
+                            .clipped()
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .overlay(Circle().stroke(Color.black,lineWidth: 0.5))
+                    }
                     
                     CustomTextArea(text: $captionText, placeholder: "What's happeing?")
                     
@@ -33,14 +43,16 @@ struct NewTweetView: View {
                         isPresented.toggle()
                     }, label: {
                         Text("Cancel")
-                    }), trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    }), trailing: Button(action: {
+                        viewModel.uploadTweet(caption: captionText)
+                    }, label: {
                         Text("Tweet")
                             .padding(.vertical, 8)
                             .padding(.horizontal, 16)
                             .foregroundColor(.white)
                             .background(Color(TWITTER_BLUE))
                             .clipShape(Capsule())
-                }))
+                    }))
                 
                 Spacer()
             }

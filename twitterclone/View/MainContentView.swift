@@ -49,7 +49,7 @@ struct MainContentView: View {
                             .frame(width: 32, height: 32)
                             .clipped()
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .overlay(Circle().stroke(Color.black,lineWidth: 1))
+                            .overlay(Circle().stroke(Color.black,lineWidth: 0.5))
                     }))
                 }
             } else {
