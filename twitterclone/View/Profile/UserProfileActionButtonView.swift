@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct UserProfileActionButtonView: View {
-    @Binding var isFollowed: Bool
-    let viewModel: ProfileViewModel
+    @ObservedObject var viewModel: ProfileViewModel
     
     
     var body: some View {
@@ -25,9 +24,9 @@ struct UserProfileActionButtonView: View {
         } else {
             HStack {
                 Button(action: {
-                    isFollowed ? viewModel.unfollowUser() : viewModel.followUser()
+                    viewModel.user.isFollowed ? viewModel.unfollowUser() : viewModel.followUser()
                 }, label: {
-                    Text(isFollowed ? "Unfollow" : "Follow")
+                    Text(viewModel.user.isFollowed ? "Unfollow" : "Follow")
                         .frame(width: 172, height: 40)
                         .background(Color(TWITTER_BLUE))
                         .clipShape(Capsule())

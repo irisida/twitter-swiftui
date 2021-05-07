@@ -22,7 +22,7 @@ struct UserProfileView: View {
     var body: some View {
         ScrollView {
             VStack {
-                UserProfileHeaderView(isFollowed: $viewModel.isFollowed, viewModel: viewModel)
+                UserProfileHeaderView(viewModel: viewModel)
                     .padding(.bottom)
                 
                 UserProfileFilterButtonsView(selectedOption: $selectedFilter)
