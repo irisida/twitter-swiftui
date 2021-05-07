@@ -12,8 +12,9 @@ struct NewMessageView: View {
     @State var searchText = ""
     @Binding var willStartChat: Bool
     @Binding var willShowChat: Bool
+    @Binding var user: User?
     
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel(config: .newMessage)
     
     var body: some View {
         ScrollView {
@@ -27,10 +28,11 @@ struct NewMessageView: View {
             // present the list of users that we
             // can chat with
             VStack(alignment: .leading) {
-                ForEach(viewModel.users) { user in
+                ForEach(searchText.isEmpty ? viewModel.users : viewModel.filteredUsers(searchText)) { user in
                     Button(action: {
                         self.willShowChat.toggle()
                         self.willStartChat.toggle()
+                        self.user = user
                     }, label: {
                         UserCell(user: user)
                     })
@@ -41,8 +43,8 @@ struct NewMessageView: View {
     }
 }
 
-struct NewMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewMessageView(willStartChat: .constant(true), willShowChat: .constant(true))
-    }
-}
+//struct NewMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewMessageView(willStartChat: .constant(true), willShowChat: .constant(true))
+//    }
+//}

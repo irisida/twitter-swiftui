@@ -6,6 +6,30 @@
 //
 
 import Foundation
+import Firebase
+
+struct Message: Identifiable {
+    let id: String
+    let text: String
+    let user: User
+    let toId: String
+    let fromId: String
+    let isFromCurrentUser: Bool
+    let timestamp: Timestamp
+    
+    var chatPartnerId: String { return isFromCurrentUser ? toId : fromId }
+    
+    init(user: User, dictionary: [String:Any]) {
+        self.id = dictionary["id"] as? String ?? ""
+        self.toId = dictionary["toid"] as? String ?? ""
+        self.fromId = dictionary["fromId"] as? String ?? ""
+        self.isFromCurrentUser = fromId == AuthViewModel.shared.userSession?.uid
+        self.timestamp = dictionary["timestamp"] as? Timestamp ?? Timestamp(date: Date())
+        self.user = user
+        self.text = dictionary["text"] as? String ?? ""
+    }
+}
+
 
 struct MockMessage: Identifiable {
     let id: Int

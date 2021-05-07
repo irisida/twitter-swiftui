@@ -34,9 +34,7 @@ struct UserProfileActionButtonView: View {
                         .font(.system(size: 16, weight: .semibold))
                 })
                 
-                Button(action: {
-                    print("DM message here")
-                }, label: {
+                NavigationLink(destination: ChatView(user: viewModel.user), label: {
                     Text("Message")
                         .frame(width: 172, height: 40)
                         .background(Color(TWITTER_BLUE))

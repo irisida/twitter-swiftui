@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ConversationCell: View {
+    let message: Message
+    
     var body: some View {
         VStack {
             HStack(spacing: 12) {
                 // image
-                Image("batman")
+                KFImage(URL(string: message.user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 56, height: 56)
@@ -24,9 +27,9 @@ struct ConversationCell: View {
                 // lines of the message text after
                 // which the text is cut off with ...
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("UserName")
+                    Text(message.user.fullname)
                         .font(.system(size: 14, weight: .semibold))
-                    Text("Longer text message. Created for the purpose of demonstrating multiple line message up to a maimum of 2 lines.")
+                    Text(message.text)
                         .font(.system(size: 14))
                         .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 }
@@ -44,9 +47,9 @@ struct ConversationCell: View {
     }
 }
 
-struct ConversationCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ConversationCell()
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct ConversationCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ConversationCell()
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

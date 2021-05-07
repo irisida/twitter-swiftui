@@ -11,6 +11,8 @@ struct ConversationView: View {
     
     @State var isShowingNewMessageView = false
     @State var willStartChat = false
+    @State var user: User?
+    @ObservedObject var viewModel = ConversationsViewModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -19,26 +21,29 @@ struct ConversationView: View {
             // on the top layer of the ZStack because the
             // var isShowingNewMessageView is true.
             // When one of these links is clicked it will
-            // open the related chat. 
-            NavigationLink(
-                destination: ChatView(),
-                isActive: $willStartChat,
-                label: {
-                    Text("")
-                })
+            // open the related chat.
+            if let user = user {
+                NavigationLink(
+                    destination: CustomLazyView(ChatView(user: user)),
+                    isActive: $willStartChat,
+                    label: {
+                        Text("")
+                    })
+            }
             
             
             ScrollView {
                 VStack {
-                    ForEach(0 ..< 20) { _ in
+                    ForEach(viewModel.recentMessages) { message in
                         NavigationLink(
-                            destination: ChatView(),
+                            destination: CustomLazyView(ChatView(user: message.user)),
                             label: {
-                                ConversationCell()
+                                ConversationCell(message: message)
+                                    .padding(.vertical, 8)
                             })
                         
                     }
-                }
+                }.padding(.vertical)
             }
             
             // the FAB button triggers a sheet to that
@@ -61,7 +66,7 @@ struct ConversationView: View {
             .shadow(color: Color.black.opacity(0.25), radius: 7, x: 1.5, y: 3)
             .sheet(isPresented: $isShowingNewMessageView, content: {
                 NewMessageView(willStartChat: $willStartChat,
-                               willShowChat: $isShowingNewMessageView)
+                               willShowChat: $isShowingNewMessageView, user: $user)
             })
         }
     }

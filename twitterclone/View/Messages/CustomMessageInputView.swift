@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomMessageInputView: View {
     
     @Binding var messageText: String
+    let viewModel: ChatViewModel
     
     var body: some View {
         HStack {
@@ -17,16 +18,18 @@ struct CustomMessageInputView: View {
                 .textFieldStyle(PlainTextFieldStyle())
                 .frame(minHeight: 30)
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                viewModel.sendMessage(messageText)
+            }, label: {
                 Text("send")
             })
         }
     }
 }
 
-struct CustomMessageInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomMessageInputView(messageText: .constant("Message Text"))
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct CustomMessageInputView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomMessageInputView(messageText: .constant("Message Text"))
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
