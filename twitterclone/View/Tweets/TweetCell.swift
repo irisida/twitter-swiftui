@@ -27,6 +27,7 @@ struct TweetCell: View {
                     HStack {
                         Text(tweet.fullname)
                             .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.black)
                         
                         Text("@\(tweet.username) •")
                             .foregroundColor(.gray)
@@ -36,49 +37,16 @@ struct TweetCell: View {
                     
                     Text(tweet.caption)
                         .padding(.trailing, 8)
+                        .foregroundColor(.black)
                     
-                    HStack {
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image(systemName: "bubble.left")
-                                .font(.system(size: 16))
-                                .frame(width: 32, height: 32)
-                        })
-                        
-                        Spacer()
-                        
-                        Button(action: {}, label: {
-                            Image(systemName: "arrow.2.squarepath")
-                                .font(.system(size: 16))
-                                .frame(width: 32, height: 32)
-                        })
-                        
-                        Spacer()
-                        
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image(systemName: "heart")
-                                .font(.system(size: 16))
-                                .frame(width: 32, height: 32)
-                        })
-                        
-                        Spacer()
-                        
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Image(systemName: "bookmark")
-                                .font(.system(size: 16))
-                                .frame(width: 32, height: 32)
-                        })
-                    }
+                    TweetReactionsView(tweet: tweet)
                     .padding(.top, 4)
                     .padding(.trailing, 32)
                     .foregroundColor(.gray)
                 }
-                
-                
             }
             .padding(.vertical, 8)
-            
-            
-            
+
             Divider()
         }
         .padding(.leading, 2)

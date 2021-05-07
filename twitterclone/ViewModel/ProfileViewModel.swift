@@ -11,10 +11,14 @@ import Firebase
 class ProfileViewModel: ObservableObject {
     let user: User
     @Published var isFollowed = false
+    @Published var userTweets = [Tweet]()
+    @Published var likedTweets = [Tweet]()
     
     init(user: User) {
         self.user = user
         checkIfUserIsfollowed()
+        fetchUserTweets()
+        fetchLikedTweets()
     }
     
     func followUser() {
@@ -43,6 +47,38 @@ class ProfileViewModel: ObservableObject {
         COLLECTION_FOLLOWING.document(currentUid).collection("user-following").document(self.user.id).getDocument { snapshot, _ in
             guard let isFollowed = snapshot?.exists else { return }
             self.isFollowed = isFollowed
+        }
+    }
+    
+    func fetchUserTweets() {
+        COLLECTION_TWEETS.whereField("uid", isEqualTo: self.user.id).getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            
+            self.userTweets = documents.map({ Tweet(dictionary: $0.data()) })
+            
+            print(self.userTweets)
+        }
+    }
+    
+    func fetchLikedTweets() {
+        var tweets = [Tweet]()
+        COLLECTION_USERS.document(user.id).collection("user-likes").getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            let tweetIDs = documents.map({ $0.documentID })
+            
+            tweetIDs.forEach { id in
+                COLLECTION_TWEETS.document(id).getDocument { snapshot, _ in
+                    guard let data = snapshot?.data() else { return }
+                    
+                    let tweet = Tweet(dictionary: data)
+                    tweets.append(tweet)
+                    
+                    guard tweets.count == tweetIDs.count else { return }
+                }
+            }
+            
+            // update the @Published var in one go
+            self.likedTweets = tweets
         }
     }
 }

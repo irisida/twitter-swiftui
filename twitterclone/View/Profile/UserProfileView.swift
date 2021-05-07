@@ -25,13 +25,10 @@ struct UserProfileView: View {
                 UserProfileHeaderView(isFollowed: $viewModel.isFollowed, viewModel: viewModel)
                     .padding(.bottom)
                 
-                
-                //UserProfileFilterButtonsView(selectedOption: $selectedFilter)
-                
-//                ForEach(0 ..< 9) { tweet in
-//                    TweetCell()
-//                        .padding(.horizontal, 24)
-//                }
+                ForEach(viewModel.userTweets) { tweet in
+                    TweetCell(tweet: tweet)
+                        .padding(.horizontal, 24)
+                }
                 
             }
             
