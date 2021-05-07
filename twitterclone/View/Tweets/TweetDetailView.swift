@@ -35,7 +35,7 @@ struct TweetDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text(tweet.caption)
                 
-                Text("19:45 • 21/02/2021")
+                Text(tweet.detailedTimestampString)
                     .font(.system(size: 16))
                     .foregroundColor(.gray)
                 
@@ -43,7 +43,7 @@ struct TweetDetailView: View {
                 
                 HStack(spacing:16) {
                     HStack(spacing: 4) {
-                        Text("\(tweet.likes)")
+                        Text("0")
                             .font(.system(size: 16, weight: .semibold))
                     
                         Text("Retweets")
@@ -52,7 +52,7 @@ struct TweetDetailView: View {
                     }
                     
                     HStack(spacing: 4) {
-                        Text("10")
+                        Text("\(tweet.likes)")
                             .font(.system(size: 16, weight: .semibold))
                     
                         Text("Likes")

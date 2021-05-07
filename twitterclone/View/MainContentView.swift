@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct MainContentView: View {
-    
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -38,7 +37,7 @@ struct MainContentView: View {
                                 Image(systemName: "envelope")
                             }
                     }
-                    .navigationBarTitle("Home")
+                    .navigationTitle("Twitterclone by Ed")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(leading: Button(action: {
                         viewModel.logout()

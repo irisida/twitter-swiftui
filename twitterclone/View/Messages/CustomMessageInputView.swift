@@ -20,6 +20,7 @@ struct CustomMessageInputView: View {
             
             Button(action: {
                 viewModel.sendMessage(messageText)
+                messageText = ""
             }, label: {
                 Text("send")
             })

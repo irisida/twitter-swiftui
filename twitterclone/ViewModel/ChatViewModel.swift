@@ -18,36 +18,24 @@ class ChatViewModel: ObservableObject {
     }
     
     func fetchMessages() {
-        guard let uid = AuthViewModel.shared.userSession?.uid else { return }
-        
-        print("DEBUG -> uid: \(uid)")
-        print("DEBUG -> user.id: \(user.id)")
-        
+        guard let uid = AuthViewModel.shared.userSession?.uid else { return }        
         let query = COLLECTION_MESSAGES.document(uid).collection(user.id)
-        query.order(by: "timestamp", descending: true)
         
         query.addSnapshotListener { snapshot, error in
-            //guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
-            guard let changes = snapshot?.documentChanges else { return }
-            
-            print("DEBUG -> changes: \(changes)")
-            
+            guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
             
             changes.forEach { change in
                 let messageData = change.document.data()
                 guard let fromId = messageData["fromId"] as? String else { return }
                 
-                print("DEBUG -> fromId: \(fromId)")
-                
                 COLLECTION_USERS.document(fromId).getDocument { snapshot, _ in
                     guard let data = snapshot?.data() else { return }
                     let user = User(dictionary: data)
                     self.messages.append(Message(user: user, dictionary: messageData))
+                    self.messages.sort(by: { $0.timestamp.dateValue() < $1.timestamp.dateValue() })
                 }
             }
         }
-        
-        print("fetching messages: \(messages)")
     }
     
     func sendMessage(_ messageText: String) {
