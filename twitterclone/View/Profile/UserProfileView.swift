@@ -11,7 +11,7 @@ struct UserProfileView: View {
     let user: User
     
     @ObservedObject var viewModel: ProfileViewModel
-    //@State var selectedFilter: TweetFilterOptions = .tweets
+    @State var selectedFilter: TweetFilterOptions = .tweets
     
     
     init(user: User) {
@@ -25,7 +25,10 @@ struct UserProfileView: View {
                 UserProfileHeaderView(isFollowed: $viewModel.isFollowed, viewModel: viewModel)
                     .padding(.bottom)
                 
-                ForEach(viewModel.userTweets) { tweet in
+                UserProfileFilterButtonsView(selectedOption: $selectedFilter)
+                    .padding()
+                
+                ForEach(viewModel.tweets(forFilter: selectedFilter)) { tweet in
                     TweetCell(tweet: tweet)
                         .padding(.horizontal, 24)
                 }

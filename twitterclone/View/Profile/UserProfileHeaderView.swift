@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct UserProfileHeaderView: View {
-    @State var selectedFilter: TweetFilterOptions = .tweets
+    //@State var selectedFilter: TweetFilterOptions = .tweets
     @Binding var isFollowed: Bool
     let viewModel: ProfileViewModel
     
@@ -58,9 +58,6 @@ struct UserProfileHeaderView: View {
             }
             
             UserProfileActionButtonView(isFollowed: $isFollowed, viewModel: viewModel)
-                        
-            UserProfileFilterButtonsView(selectedOption: $selectedFilter)
-                .padding()
             
             Spacer()
             

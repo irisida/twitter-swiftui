@@ -56,7 +56,7 @@ class ProfileViewModel: ObservableObject {
             
             self.userTweets = documents.map({ Tweet(dictionary: $0.data()) })
             
-            print(self.userTweets)
+            print("Fetch user tweets")
         }
     }
     
@@ -74,11 +74,22 @@ class ProfileViewModel: ObservableObject {
                     tweets.append(tweet)
                     
                     guard tweets.count == tweetIDs.count else { return }
-                }
+                    
+                    self.likedTweets = tweets
+                }                        
             }
-            
-            // update the @Published var in one go
-            self.likedTweets = tweets
+        }
+    }
+    
+    func tweets(forFilter filter: TweetFilterOptions) -> [Tweet] {
+        // not currently exhaustive as doesn't handle media
+        // and replies.
+        
+        switch filter {
+        case .tweets: return userTweets
+        case .likes: return likedTweets
+        default:
+            return userTweets
         }
     }
 }

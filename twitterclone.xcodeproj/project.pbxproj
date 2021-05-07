@@ -13,6 +13,7 @@
 		644E106426449DC700AE9D05 /* TweetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E106326449DC700AE9D05 /* TweetDetailView.swift */; };
 		644E106726453FD500AE9D05 /* TweetReactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E106626453FD500AE9D05 /* TweetReactionsView.swift */; };
 		644E106A2645440F00AE9D05 /* TweetReactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E10692645440F00AE9D05 /* TweetReactionsViewModel.swift */; };
+		644E106D26456FCF00AE9D05 /* CustomLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E106C26456FCF00AE9D05 /* CustomLazyView.swift */; };
 		64C9958F263EED5C0042ED5C /* twittercloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9958E263EED5C0042ED5C /* twittercloneApp.swift */; };
 		64C99591263EED5C0042ED5C /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C99590263EED5C0042ED5C /* MainContentView.swift */; };
 		64C99593263EED5E0042ED5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C99592263EED5E0042ED5C /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		644E106326449DC700AE9D05 /* TweetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailView.swift; sourceTree = "<group>"; };
 		644E106626453FD500AE9D05 /* TweetReactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetReactionsView.swift; sourceTree = "<group>"; };
 		644E10692645440F00AE9D05 /* TweetReactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetReactionsViewModel.swift; sourceTree = "<group>"; };
+		644E106C26456FCF00AE9D05 /* CustomLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyView.swift; sourceTree = "<group>"; };
 		64C9958B263EED5C0042ED5C /* twitterclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C9958E263EED5C0042ED5C /* twittercloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twittercloneApp.swift; sourceTree = "<group>"; };
 		64C99590263EED5C0042ED5C /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				64C996012641CB740042ED5C /* CustomSecureField.swift */,
 				64C9960426429FFB0042ED5C /* CustomUIImagePicker.swift */,
 				64C995AA263F0CAD0042ED5C /* CustomSearchBar.swift */,
+				644E106C26456FCF00AE9D05 /* CustomLazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				64C995FF264196A90042ED5C /* CustomTextField.swift in Sources */,
 				64C995A8263F09180042ED5C /* SearchView.swift in Sources */,
 				644E106726453FD500AE9D05 /* TweetReactionsView.swift in Sources */,
+				644E106D26456FCF00AE9D05 /* CustomLazyView.swift in Sources */,
 				64C995B9263F32750042ED5C /* NotificationsView.swift in Sources */,
 				64C99591263EED5C0042ED5C /* MainContentView.swift in Sources */,
 				64C995AB263F0CAD0042ED5C /* CustomSearchBar.swift in Sources */,
